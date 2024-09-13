@@ -50,19 +50,21 @@ const InvoiceListItem = ({ invoice }: InvoiceListItemProps) => {
 
   return (
     <div className="flex justify-between items-center py-4 px-4 cursor-pointer">
-      <p className="text-sm font-black text-[#373B47] w-[20%]">
+      <p className="text-sm font-black text-[#373B47] w-[50%]">
         {invoiceWithStatus.id}
       </p>
-      <div>
-        <p className="uppercase tracking-wider text-xs text-[#666F77] mb-1">
-          Due date
-        </p>
-        <p className="font-black text-sm text-[#697598]">
-          {invoiceWithStatus.due_date}
-        </p>
+      <div className="flex justify-center w-full">
+        <div>
+          <p className="uppercase tracking-wider text-xs text-[#666F77] mb-1">
+            Due date
+          </p>
+          <p className="font-black text-sm text-[#697598]">
+            {invoiceWithStatus.due_date}
+          </p>
+        </div>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <p className="text-[#373B47] self-end font-black mb-3">
           {invoiceWithStatus.total}
         </p>
