@@ -39,3 +39,10 @@ export interface Invoice {
   note: string;
   status: InvoiceStatus;
 }
+
+export interface InvoiceActivity {
+  title: string;
+  time: string;
+  action: string;
+  user: string;
+}

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 interface InvoiceListItemProps {
   invoice: Invoice;
+  handleInvoiceClick: (invoice: Invoice) => void;
 }
 
 const getRandomStatus = () => {
@@ -33,7 +34,10 @@ const statusColors: Record<
     color: "#D98F00",
   },
 };
-const InvoiceListItem = ({ invoice }: InvoiceListItemProps) => {
+const InvoiceListItem = ({
+  invoice,
+  handleInvoiceClick,
+}: InvoiceListItemProps) => {
   const [status, setStatus] = useState<InvoiceStatus | null>(null);
 
   useEffect(() => {
@@ -50,7 +54,10 @@ const InvoiceListItem = ({ invoice }: InvoiceListItemProps) => {
   };
 
   return (
-    <div className="flex justify-between items-center py-4 px-4 cursor-pointer">
+    <div
+      className="flex justify-between items-center py-4 px-4 cursor-pointer"
+      onClick={() => handleInvoiceClick(invoiceWithStatus)}
+    >
       <p className="text-sm font-black text-[#373B47] w-[50%]">
         {invoiceWithStatus.id}
       </p>

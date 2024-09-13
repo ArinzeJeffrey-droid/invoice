@@ -20,7 +20,8 @@ export const invoiceData: Invoice = {
   items: [
     {
       name: "Email Marketing",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
+      description:
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
       quantity: 10,
       price: "$1,500",
       total: "$15,000.00",
@@ -45,7 +46,7 @@ export const invoiceData: Invoice = {
       quantity: 6,
       price: "$1,110,500",
       total: "$6,663,000.00",
-    }
+    },
   ],
   subtotal: "$6,697,200.00",
   discount: "$167,430.00",
@@ -59,4 +60,11 @@ export const invoiceData: Invoice = {
   },
   note: "Thank you for your patronage",
   status: "overdue",
-}
+};
+
+export const invoiceActivity = {
+  title: "Invoice creation",
+  time: "Yesterday, 12:05 PM",
+  action: "Created invoice",
+  user: "00239434/Olaniyi Ojo Adewale",
+};
