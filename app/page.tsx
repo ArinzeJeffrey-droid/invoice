@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Header from "../components/header";
-import InvoiceStatistics from "../components/invoice-statistics";
-import InvoiceActions from "../components/invoice-actions";
+import InvoiceStatistics from "../components/invoice/invoice-statistics";
+import InvoiceActions from "../components/invoice/invoice-actions";
 import { Card, CardContent } from "@/components/ui/card";
 import { invoiceData } from "@/invoiceData";
-import InvoiceListItem from "@/components/invoice-list-item";
+import InvoiceListItem from "@/components/invoice/invoice-list-item";
 
 export default function Home() {
   return (
