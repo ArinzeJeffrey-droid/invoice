@@ -1,5 +1,6 @@
 "use client";
 import { Invoice, InvoiceStatus } from "@/__types__/invoice";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 interface InvoiceListItemProps {
@@ -65,11 +66,14 @@ const InvoiceListItem = ({ invoice }: InvoiceListItemProps) => {
       </div>
 
       <div className="flex flex-col w-full">
-        <p className="text-[#373B47] self-end font-black mb-3">
+        <p className="text-[#373B47] self-end font-black mb-3 tracking-wide">
           {invoiceWithStatus.total}
         </p>
         <span
-          className="text-xs self-end uppercase font-black py-2 px-3 rounded-2xl border"
+          className={cn(
+            status === "paid" ? "py-2 px-3" : "py-2 px-3 md:px-7",
+            "text-xs self-end uppercase font-black rounded-2xl border tracking-wide"
+          )}
           style={{
             color: statusColors[invoiceWithStatus.status].color,
             backgroundColor:

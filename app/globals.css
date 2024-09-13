@@ -5,8 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-neue: 'NeueHaasDisplayRoman', sans-serif;
-  --font-neue-mono: 'NeueHaasDisplayBold', sans-serif;
+  --font-neue: "NeueHaasDisplayRoman", sans-serif;
+  --font-neue-mono: "NeueHaasDisplayBold", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,4 +91,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+#app-sidebar {
+  scrollbar-width: none;
 }

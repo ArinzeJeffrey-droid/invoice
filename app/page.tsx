@@ -9,10 +9,11 @@ import InvoiceListItem from "@/components/invoice-list-item";
 
 export default function Home() {
   return (
-    <main className="px-10">
-      <Header />
-      <div className="flex justify-between items-center mb-10">
-        <h2 className="font-black text-3xl text-[#1F1F23]">Invoice</h2>
+    <>
+      <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+        <h2 className="font-black text-3xl text-[#1F1F23] mb-4 md:mb-0">
+          Invoice
+        </h2>
         <div className="flex items-center gap-8">
           <Button
             size="sm"
@@ -33,8 +34,8 @@ export default function Home() {
       <InvoiceStatistics />
       <InvoiceActions />
 
-      <div className="flex gap-8">
-        <Card className="shadow-sm border-none rounded-[40px] w-[60%]">
+      <div className="flex flex-col md:flex-row gap-8">
+        <Card className="shadow-sm border-none rounded-[40px] md:w-[60%]">
           <CardContent className="py-8 px-10">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-black text-xl text-[#1F1F23]">
@@ -79,7 +80,7 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm border-none rounded-[40px] w-[40%]">
+        <Card className="shadow-sm border-none rounded-[40px] md:w-[40%]">
           <CardContent className="py-8 px-10">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-black text-xl text-[#1F1F23]">
@@ -96,6 +97,6 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
-    </main>
+    </>
   );
 }

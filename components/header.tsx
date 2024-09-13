@@ -7,7 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { NotificationBing } from "iconsax-react";
+import { Menu, NotificationBing } from "iconsax-react";
 import { ChevronDown } from "lucide-react";
 
 const dropdownItems = [
@@ -18,11 +18,22 @@ const dropdownItems = [
   { label: "Log Out" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+  toggleSidebar: () => void;
+}
+
+const Header = ({ toggleSidebar }: HeaderProps) => {
   return (
     <header className="border-b pb-4 mb-10">
       <div className="flex justify-between items-center">
-        <h1 className="text-[#373B47] text-3xl font-bold tracking-widest">INVOICE</h1>
+        <div className="flex items-center gap-6">
+          <button className="md:hidden text-gray-600" onClick={toggleSidebar}>
+            <Menu size={24} />
+          </button>
+          <h1 className="text-[#373B47] text-3xl font-bold tracking-widest">
+            INVOICE
+          </h1>
+        </div>
         <div className="flex items-center gap-6">
           <Button
             size="sm"
