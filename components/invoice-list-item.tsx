@@ -1,0 +1,85 @@
+"use client";
+import { Invoice, InvoiceStatus } from "@/__types__/invoice";
+import { useEffect, useState } from "react";
+
+interface InvoiceListItemProps {
+  invoice: Invoice;
+}
+
+const getRandomStatus = () => {
+  const statuses = ["paid", "overdue", "draft", "pending payment"];
+  return statuses[Math.floor(Math.random() * statuses.length)] as InvoiceStatus;
+};
+
+const statusColors: Record<
+  InvoiceStatus,
+  { backgroundColor: string; color: string }
+> = {
+  paid: {
+    backgroundColor: "#E6FFF0",
+    color: "#129043",
+  },
+  overdue: {
+    backgroundColor: "#FFF4F5",
+    color: "#FF5663",
+  },
+  draft: {
+    backgroundColor: "#F6F8FA",
+    color: "#373B47",
+  },
+  "pending payment": {
+    backgroundColor: "#FFF8EB",
+    color: "#D98F00",
+  },
+};
+const InvoiceListItem = ({ invoice }: InvoiceListItemProps) => {
+  const [status, setStatus] = useState<InvoiceStatus | null>(null);
+
+  useEffect(() => {
+    setStatus(getRandomStatus());
+  }, []);
+
+  if (!status) {
+    return null;
+  }
+
+  const invoiceWithStatus: Invoice = {
+    ...invoice,
+    status,
+  };
+
+  return (
+    <div className="flex justify-between items-center py-4 px-4 cursor-pointer">
+      <p className="text-sm font-black text-[#373B47] w-[20%]">
+        {invoiceWithStatus.id}
+      </p>
+      <div>
+        <p className="uppercase tracking-wider text-xs text-[#666F77] mb-1">
+          Due date
+        </p>
+        <p className="font-black text-sm text-[#697598]">
+          {invoiceWithStatus.due_date}
+        </p>
+      </div>
+
+      <div className="flex flex-col">
+        <p className="text-[#373B47] self-end font-black mb-3">
+          {invoiceWithStatus.total}
+        </p>
+        <span
+          className="text-xs self-end uppercase font-black py-2 px-3 rounded-2xl border"
+          style={{
+            color: statusColors[invoiceWithStatus.status].color,
+            backgroundColor:
+              statusColors[invoiceWithStatus.status].backgroundColor,
+            borderColor: statusColors[invoiceWithStatus.status].color,
+          }}
+        >
+          {invoiceWithStatus.status}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default InvoiceListItem;
