@@ -35,7 +35,7 @@ const InvoiceDetailsModal = ({
               Invoice Activity
             </p>
 
-            {Array(4)
+            {Array(5)
               .fill(invoiceActivity)
               .map((invoiceActivity) => (
                 <InvoiceActivityItem

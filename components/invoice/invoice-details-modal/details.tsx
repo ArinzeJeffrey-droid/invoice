@@ -20,7 +20,7 @@ const Details = ({ invoice }: DetailsProps) => {
             </p>
           </div>
 
-          <div className="flex justify-between mb-8">
+          <div className="flex flex-wrap justify-between mb-8">
             <div className="flex gap-4">
               <Image
                 src={businessImg}
@@ -63,7 +63,7 @@ const Details = ({ invoice }: DetailsProps) => {
             Invoice details
           </p>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between">
             <div>
               <p className="uppercase text-xs text-[#666F77] mb-1">
                 invoice no
