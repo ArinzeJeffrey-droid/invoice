@@ -5,12 +5,14 @@ import { invoiceData } from "@/invoiceData";
 import InvoiceListItem from "./invoice-list-item";
 import { useState } from "react";
 import { Invoice } from "@/__types__/invoice";
+import InvoiceDetailsModal from "./invoice-details-modal";
 
 const RecentInvoices = () => {
   const [selectedInvoice, setSelectedInvoice] = useState<Invoice>();
   const [isInvoiceModalOpen, setIsInvoiceModalOpen] = useState<boolean>(false);
 
   const handleInvoiceClick = (invoice: Invoice) => {
+    setIsInvoiceModalOpen(true);
     setSelectedInvoice(invoice);
   };
 
@@ -58,6 +60,12 @@ const RecentInvoices = () => {
             ))}
         </div>
       </CardContent>
+
+      <InvoiceDetailsModal
+        open={isInvoiceModalOpen}
+        onOpenChange={setIsInvoiceModalOpen}
+        invoice={selectedInvoice}
+      />
     </Card>
   );
 };

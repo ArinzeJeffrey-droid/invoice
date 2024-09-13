@@ -93,6 +93,7 @@ body {
   }
 }
 
-#app-sidebar {
+#app-sidebar,
+#custom-modal {
   scrollbar-width: none;
 }
