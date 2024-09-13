@@ -8,7 +8,7 @@ const actions = [
   {
     title: "Create New Invoice",
     subtitle: "Create new invoices easily",
-    icon: (active: boolean) => (
+    icon: () => (
       <Image
         src={moneySvg.src}
         width={80}
