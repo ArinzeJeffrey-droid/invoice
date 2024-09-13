@@ -22,7 +22,7 @@ export function Modal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         aria-describedby="modal"
-        className={cn("max-w-[95vw] bg-white mx-auto p-4 h-[90vh] overflow-y-auto", className)}
+        className={cn("max-w-[95vw] bg-white mx-auto p-4 h-[90vh] overflow-y-auto !rounded-[40px]", className)}
         closeButton={closeButton}
         id="custom-modal"
       >
