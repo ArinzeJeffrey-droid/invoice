@@ -23,7 +23,7 @@ const InvoiceDetailsModal = ({
       open={open}
       onOpenChange={onOpenChange}
     >
-      <div className="p-6">
+      <div className="md:p-6">
         <InvoiceDetailsHeader invoice={invoice as Invoice} />
         <Reminders />
 

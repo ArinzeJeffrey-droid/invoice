@@ -41,7 +41,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       </div>
       <main className="flex-1 py-5 overflow-y-auto">
-        <div className="px-10">
+        <div className="px-3 md:px-10">
           <Header toggleSidebar={toggleSidebar} />
           {children}
         </div>
