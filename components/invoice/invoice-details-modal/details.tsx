@@ -13,40 +13,38 @@ const Details = ({ invoice }: DetailsProps) => {
     <Card className="shadow-none rounded-[40px] md:w-[60%]">
       <CardContent className="p-6">
         <div className="rounded-[40px] bg-[#FCDDEC] p-6 py-10 mb-6">
-          <div className="flex justify-between mb-4">
-            <p className="font-black text-[#697598] text-xs">SENDER</p>
-            <p className="font-black text-[#697598] text-xs text-left self-start">
-              CUSTOMER
-            </p>
-          </div>
-
           <div className="flex flex-wrap justify-between mb-8">
-            <div className="flex gap-4">
-              <Image
-                src={businessImg}
-                className="rounded-md w-14 h-14"
-                width={60}
-                height={60}
-                alt={invoice.id}
-              />
-
-              <div>
-                <p className="text-[#1F1F23] font-black mb-2">
-                  {invoice.sender.name}
-                </p>
-                <p className="text-xs text-[#697598] mb-2">
-                  {invoice.sender.contact}
-                </p>
-                <p className="text-xs text-[#697598] mb-2">
-                  {invoice.sender.address}
-                </p>
-                <p className="text-xs text-[#697598] mb-2">
-                  {invoice.sender.email}
-                </p>
+            <div>
+              <p className="font-black text-[#697598] text-xs mb-4">SENDER</p>
+              <div className="flex gap-4">
+                <Image
+                  src={businessImg}
+                  className="rounded-md w-14 h-14"
+                  width={60}
+                  height={60}
+                  alt={invoice.id}
+                />
+                <div>
+                  <p className="text-[#1F1F23] font-black mb-2">
+                    {invoice.sender.name}
+                  </p>
+                  <p className="text-xs text-[#697598] mb-2">
+                    {invoice.sender.contact}
+                  </p>
+                  <p className="text-xs text-[#697598] mb-2">
+                    {invoice.sender.address}
+                  </p>
+                  <p className="text-xs text-[#697598] mb-2">
+                    {invoice.sender.email}
+                  </p>
+                </div>
               </div>
             </div>
 
             <div>
+              <p className="font-black text-[#697598] text-xs text-left mb-4">
+                CUSTOMER
+              </p>
               <p className="text-[#1F1F23] font-black mb-2">
                 {invoice.customer.name}
               </p>
@@ -63,7 +61,7 @@ const Details = ({ invoice }: DetailsProps) => {
             Invoice details
           </p>
 
-          <div className="flex flex-wrap items-center justify-between">
+          <div className="flex flex-col gap-5 md:gap-0 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="uppercase text-xs text-[#666F77] mb-1">
                 invoice no
@@ -75,7 +73,7 @@ const Details = ({ invoice }: DetailsProps) => {
 
             <div>
               <p className="uppercase text-xs text-[#666F77] mb-1">
-              Issue date
+                Issue date
               </p>
               <p className="text-xs tex-[#1F1F23] font-black">
                 {invoice.issue_date}
@@ -83,9 +81,7 @@ const Details = ({ invoice }: DetailsProps) => {
             </div>
 
             <div>
-              <p className="uppercase text-xs text-[#666F77] mb-1">
-              due date
-              </p>
+              <p className="uppercase text-xs text-[#666F77] mb-1">due date</p>
               <p className="text-xs tex-[#1F1F23] font-black">
                 {invoice.due_date}
               </p>
@@ -93,7 +89,7 @@ const Details = ({ invoice }: DetailsProps) => {
 
             <div>
               <p className="uppercase text-xs text-[#666F77] mb-1">
-              Billing currency
+                Billing currency
               </p>
               <p className="text-xs tex-[#1F1F23] font-black">
                 {invoice.currency}
